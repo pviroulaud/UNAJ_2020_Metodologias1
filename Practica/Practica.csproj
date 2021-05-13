@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{156D589C-83DD-4406-89F1-66D9D58137B2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Practica</RootNamespace>
+    <AssemblyName>Practica</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alumno.cs" />
+    <Compile Include="AlumnoMuyEstudioso.cs" />
+    <Compile Include="Gerente.cs" />
+    <Compile Include="Numero.cs" />
+    <Compile Include="PatronAdapter\AdapterAlumno.cs" />
+    <Compile Include="PatronAdapter\MDPI.cs" />
+    <Compile Include="PatronDecorator\DecoradorAlumno.cs" />
+    <Compile Include="PatronDecorator\DecoradorAprobado.cs" />
+    <Compile Include="PatronDecorator\DecoradorNombre.cs" />
+    <Compile Include="PatronDecorator\DecoradorNota.cs" />
+    <Compile Include="PatronDecorator\IcomponenteAlumno.cs" />
+    <Compile Include="PatronFactoryMethod\FMcomparableAlumno.cs" />
+    <Compile Include="PatronFactoryMethod\FMcomparableNumero.cs" />
+    <Compile Include="PatronFactoryMethod\FMcomparableVendedor.cs" />
+    <Compile Include="PatronFactoryMethod\GeneradorDeDatosAleatorios.cs" />
+    <Compile Include="PatronFactoryMethod\IfabricaDeComparables.cs" />
+    <Compile Include="PatronFactoryMethod\LectorDeDatos.cs" />
+    <Compile Include="PatronIterator\ClaveValor.cs" />
+    <Compile Include="PatronIterator\Cola.cs" />
+    <Compile Include="PatronIterator\Diccionario.cs" />
+    <Compile Include="PatronIterator\Icoleccionable.cs" />
+    <Compile Include="PatronIterator\IteradorCola.cs" />
+    <Compile Include="PatronIterator\IteradorDiccionario.cs" />
+    <Compile Include="PatronIterator\IteratorPila.cs" />
+    <Compile Include="PatronIterator\Pila.cs" />
+    <Compile Include="PatronObserver\Iobservador.cs" />
+    <Compile Include="PatronObserver\Iobservable.cs" />
+    <Compile Include="PatronStrategy\Icomparable.cs" />
+    <Compile Include="PatronIterator\Iiterable.cs" />
+    <Compile Include="PatronIterator\Iiterator.cs" />
+    <Compile Include="PatronStrategy\comparaPorDNI.cs" />
+    <Compile Include="PatronStrategy\comparaPorLegajo.cs" />
+    <Compile Include="PatronStrategy\comparaPorNombre.cs" />
+    <Compile Include="PatronStrategy\comparaPorPromedio.cs" />
+    <Compile Include="PatronStrategy\IstrategyComparacion.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vendedor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
