@@ -11,49 +11,29 @@ namespace Practica
         static void Main(string[] args)
         {
 
-            //Teacher tch = new Teacher();
-
-            //for (int n = 0; n < 10; n++)
-            //{
-            //    Alumno AL = new Alumno("AL" + n.ToString(), n, n, n);
-            //    PatronAdapter.AdapterAlumno ALadaptado = new PatronAdapter.AdapterAlumno(AL);
-            //    tch.goToClass(ALadaptado);
-
-            //}
-            //for (int n = 10; n < 20; n++)
-            //{
-            //    Alumno AL = new Alumno("ALmuyEST" + n.ToString(), n, n, n);
-            //    PatronAdapter.AdapterAlumno ALmuyEstadaptado = new PatronAdapter.AdapterAlumno(AL);
-            //    tch.goToClass(ALmuyEstadaptado);
-
-            //}
-
-            //tch.teachingAClass();
-
+            // Test Proxy
             Teacher tch = new Teacher();
 
             for (int n = 0; n < 10; n++)
             {
-                PatronDecorator.IcomponenteAlumno AL = new Alumno("AL" + n.ToString(), n, n, n);
-                AL = new PatronDecorator.DecoradorNombre((Alumno)AL);
-
-                PatronAdapter.AdapterAlumno ALadaptado = new PatronAdapter.AdapterAlumno(AL);
+                Alumno AL = new Alumno("AL" + n.ToString(), n, n, n);
+                PatronProxy.ProxyAlumno pxyAL = new PatronProxy.ProxyAlumno(AL.getNombre(), AL.getDNI(), AL.getLegajo(), AL.getPromedio());
+                PatronAdapter.AdapterAlumno ALadaptado = new PatronAdapter.AdapterAlumno(pxyAL);
                 tch.goToClass(ALadaptado);
 
             }
             for (int n = 10; n < 20; n++)
             {
-                PatronDecorator.IcomponenteAlumno AL = new Alumno("ALmuyEST" + n.ToString(), n, n, n);
-                AL = new PatronDecorator.DecoradorNombre((Alumno)AL);
+                Alumno AL = new Alumno("ALmuyEST" + n.ToString(), n, n, n);
+                PatronProxy.ProxyAlumnoMuyEstudioso pxyALmuyESTUD = new PatronProxy.ProxyAlumnoMuyEstudioso(AL.getNombre(), AL.getDNI(), AL.getLegajo(), AL.getPromedio());
 
-                PatronAdapter.AdapterAlumno ALmuyEstadaptado = new PatronAdapter.AdapterAlumno(AL);
-
+                PatronAdapter.AdapterAlumno ALmuyEstadaptado = new PatronAdapter.AdapterAlumno(pxyALmuyESTUD);
                 tch.goToClass(ALmuyEstadaptado);
 
-            }
-
+            }        
             tch.teachingAClass();
 
+            
 
 
 

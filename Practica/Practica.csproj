@@ -70,6 +70,8 @@
     <Compile Include="PatronIterator\Pila.cs" />
     <Compile Include="PatronObserver\Iobservador.cs" />
     <Compile Include="PatronObserver\Iobservable.cs" />
+    <Compile Include="PatronProxy\ProxyAlumno.cs" />
+    <Compile Include="PatronProxy\ProxyAlumnoMuyEstudioso.cs" />
     <Compile Include="PatronStrategy\Icomparable.cs" />
     <Compile Include="PatronIterator\Iiterable.cs" />
     <Compile Include="PatronIterator\Iiterator.cs" />
